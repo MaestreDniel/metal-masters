@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->double('price', 8, 2);
             $table->string('description');
-            $table->string('specs');
-            $table->foreignId('image_id');
+            $table->string('specs')->nullable();
+            $table->foreignId('image_id')->nullable();
             $table->timestamps();
         });
     }

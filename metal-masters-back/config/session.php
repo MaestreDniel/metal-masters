@@ -155,7 +155,11 @@ return [
     |
     */
 
-    'domain' => env('SESSION_DOMAIN'),
+    // Finally, you should ensure your application's session cookie domain configuration supports any subdomain of your root domain. 
+    // You may accomplish this by prefixing the domain with a leading . within your application's config/session.php configuration file:
+
+    // 'domain' => env('SESSION_DOMAIN'), // .domain.com
+    'domain' => '.localhost', // .domain.com
 
     /*
     |--------------------------------------------------------------------------

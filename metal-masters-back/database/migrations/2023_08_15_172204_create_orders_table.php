@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('localizer');
             $table->double('sum');
-            $table->enum('state', ['pending', 'sent', 'delivered']);
-            $table->string('comment');
+            $table->enum('state', ['pending', 'sent', 'delivered'])->default('pending');
+            $table->string('comment')->nullable();
             $table->foreignId('user_id');
             $table->foreignId('product_id');
             $table->timestamps();
