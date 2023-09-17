@@ -17,8 +17,8 @@ return new class extends Migration
             $table->double('sum');
             $table->enum('state', ['pending', 'sent', 'delivered'])->default('pending');
             $table->string('comment')->nullable();
-            $table->foreignId('user_id');
-            $table->foreignId('product_id');
+            $table->foreignId('user_id')->constrained('users')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('product_id')->constrained('products')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
