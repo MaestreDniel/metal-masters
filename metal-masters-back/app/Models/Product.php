@@ -20,13 +20,18 @@ class Product extends Model
         'price',
         'description',
         'specs',
-        'image_id',
         'created_at',
         'updated_at'
     ];
 
+    /**
+     * Get the images that belong to the product.
+     * Following Laravel documentation: Eloquent will automatically determine the proper foreign key column for the Image model.
+     * By convention, Eloquent will take the "snake case" name of the parent model and suffix it with _id. 
+     * So, in this example, Eloquent will assume the foreign key column on the Image model is product_id.
+     */
     public function image(): HasMany
     {
-        return $this->hasMany(Image::class, 'image_id');
+        return $this->hasMany(Image::class);
     }
 }

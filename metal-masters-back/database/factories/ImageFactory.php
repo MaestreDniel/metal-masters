@@ -18,7 +18,7 @@ class ImageFactory extends Factory
     {
         return [
             'url' => fake()->url(),
-            'product_id' => fake()->unique()->numberBetween(1, 10),
+            'product_id' => fake()->numberBetween(1, 5),
             'created_at' => now(),
             'updated_at' => now()
         ];
